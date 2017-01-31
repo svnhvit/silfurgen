@@ -1,0 +1,487 @@
+
+* {
+	box-sizing: border-box;
+	word-wrap: break-word;
+}
+
+body {
+	@include body();
+}
+
+@include links();
+
+// blockquote {
+// 	padding: $default_gutter;
+// 	font-size: 20*$px;
+// 	@include blockquote();
+// }
+
+// Overridden from lists.scss
+ul, ol {
+	padding: 0;
+	margin: 0 0 $phi*1em $phi*1em;
+}
+
+@include htags(0.7);
+
+
+
+//content of layout/content_sidebar.scss posted here for easier modification
+
+.content-area {
+	float: right;
+	margin: 0 0 0 0;
+	width: $size__site-main;
+}
+
+.site-main {
+	margin: 0 0 0 0;
+}
+
+// .site-content .widget-area {
+// 	float: left;
+// 	overflow: hidden;
+// 	width: $size__site-sidebar;
+// }
+
+.site-footer {
+	clear: both;
+	width: $size__site-main;
+}
+
+
+// **-----
+// CUSTOM STYLES
+// **-----
+
+// Site wrapper
+.site {
+	padding-top: 0;
+}
+
+//Header
+.site-header {
+	max-width: $size__site-main;
+	margin: 0 auto 0 auto;
+}
+
+//**** Navigation
+
+.navbar-brand {
+	font-family: $font__brand;
+	font-weight: bold;
+	font-size: 48*$px;
+}
+
+.navbar-default {
+	background-color: $color__background-navbar;
+	border-color: transparent;
+	min-height: 100*$px;
+	padding-top: $default_v_padding/2;
+}
+
+.navbar-default .navbar-collapse {
+	border: none;
+}
+
+.language-link.navbar-toggle {
+	border: none;
+}
+
+#about-link, #services-link, #contact-link  {
+	padding: 0;
+	margin: 15px;
+}
+
+
+#about-link:hover, #services-link:hover, #contact-link:hover  {
+	border-bottom: 2px solid $color__link;
+}
+
+.affix {
+	background-color: $color__background-black;
+	border-color: transparent;
+}
+
+
+// Content
+.site-content {
+	max-width: $size__site-main;
+	margin: 0 auto 0 auto; 
+}
+
+//**** Page sections
+
+
+.page-section {
+    padding: 4*$default_v_padding 2*$default_h_padding 2*$default_v_padding 2*$default_h_padding;
+    text-align: center;
+    margin-bottom: -50*$px;
+    min-height: 100vh;
+    background-color: #fff;
+    background-size: cover;
+
+    h1, h4, img, p {
+	padding: $default_v_padding 0 $default_v_padding/2 0;
+	}
+}
+
+
+#intro, #Services {
+	color: $color__text-main;
+}
+
+#about, #contact {
+	color: $color__text-secondary;
+}
+
+//...intro page section
+
+.intro-background {
+	background-image: url('images/hraunsfjordur.jpg');
+	background-size: cover;
+}
+
+#intro .btn {
+	border-radius: 0px;
+	border: 2*$px solid;
+}
+
+#intro .btn-default {
+	border-color: #fff;
+	background-color: transparent;
+}
+
+#intro h1 {
+	padding: 4*$default_v_padding 0 2*$default_v_padding 0;
+}
+
+//...about page section
+
+#about {
+
+	img, p {
+ 	padding-bottom: $default_v_padding;
+ 	}
+}
+
+//...services page section
+
+.services-background {
+	background-image: url('images/laxa.jpg');
+	background-size: cover;
+}
+
+.services-section {
+	padding-bottom: 2*$default_v_padding;
+	//background-color: green;
+
+	h4 {
+		margin: 0;
+		//background-color: red;
+	}
+}
+
+//...contact page section
+
+.contact-info-wrapper {
+ 	padding: 0 0 2*$default_v_padding 0;
+}
+
+.contact-info {
+	width: 65%;
+	border-bottom: 1*$px solid;
+	border-color: $color__border-cinfo;
+	padding: 0;
+	margin: 0 auto $default_v_padding auto;
+	font-family: $font__secondary;
+	font-size: 20*$px;
+	text-align: center;
+}
+
+.contact-info p {
+	text-align: left;
+	margin-bottom: 0;
+	padding: $default_v_padding/2 0 0 0;
+}
+
+//...font aweseome icons
+
+#address-info:before {
+	font-family: "Font Awesome";
+	content: "\f041";
+	margin-right: 0.5em;
+}
+
+#phone-info:before {
+	font-family: "Font Awesome";
+	content: "\f095";
+	margin-right: 0.5em;
+}
+
+#email-info:before {
+	font-family: "Font Awesome";
+	content: "\f0e0";
+	margin-right: 0.5em;
+}
+
+//...form styles
+
+.form-group {
+	width: 65vw;
+	margin: 0 auto 0 auto;
+
+	.control-label {
+		float: left;
+		margin-bottom: 0;
+		font-family: 'Din Light'
+	}
+
+	.text-danger {
+		margin: 0;
+	}
+
+	.btn {
+		font-family: 'Din Light';
+	}
+
+	.btn-primary {
+		background-color: $color__background-black;
+		border-radius: 0px;
+	}
+
+	button {
+		box-shadow: none;
+	}
+
+}
+
+
+// Footer
+.site-footer {
+	color: $color__text-main;
+	background-color: $color__background-black;
+	//use padding because of neg. margin on page-sections
+	padding-top: 50*$px;
+	min-height: 100*$px;
+	max-width: $size__site-main;
+
+	p {
+		padding:  $default_v_padding/2 0 0 $default_h_padding;
+		margin-bottom: 0;
+	}
+}
+
+//404 page
+.error-404 {
+     padding: 4*$default_v_padding 2*$default_h_padding 2*$default_v_padding 2*$default_h_padding;
+     text-align: center;
+     margin-bottom: -50*$px;
+     min-height: 100vh;
+     background-color: #fff;
+     background-size: cover;
+
+    h1 {
+		padding: 4*$default_v_padding 0 2*$default_v_padding 0;
+	}
+}
+
+.error-background {
+	background-image: url('images/hraunsfjordur.png');
+	background-size: cover;
+}
+
+
+
+// Resposive layout adjustments
+
+@media (min-width: 768*$px) {
+
+ 	@include htags(0.9);
+
+ 	//redeclare variables to be bigger
+ 	$default_h_padding: $phi * $phi * 1rem;
+	$default_v_padding: $default_h_padding;
+
+	//reclaculate padding
+	.page-section {
+    	padding: 2*$default_v_padding 0 $default_v_padding 0;
+
+		h1, img, p, h4 {
+		padding: $default_v_padding 2*$default_h_padding $default_v_padding/2 2*$default_h_padding;
+		}
+	}
+
+	#intro h1 {
+		padding: 4*$default_v_padding $default_h_padding $default_v_padding $default_h_padding;
+	}
+
+	#about {
+
+		img, p {
+	 	padding-bottom: $default_v_padding;
+	 	}
+	}
+
+	.services-section {
+		padding-bottom: 2*$default_v_padding;
+
+		h4 {
+			width: 65%;
+			margin: auto;
+		}
+	}
+
+	.contact-info-wrapper {
+ 		padding: 0 0 2*$default_v_padding 0;
+	}
+
+	.contact-info {
+		padding: $default_v_padding 0 0 0;
+	}
+
+	.contact-info p {
+		padding: $default_v_padding/2 0 0 0;
+	}
+
+	.site-footer {
+		min-height: 150*$px;
+		p {
+			padding:  $default_v_padding 0 0 $default_h_padding;
+		}
+	}
+
+	.error-404 {
+     padding: 2*$default_v_padding 0 $default_v_padding 0;
+
+    	h1 {
+		padding: 2*$default_v_padding 0 $default_v_padding 0;
+		}
+	}
+
+}
+
+@media (min-width:992*$px) {
+
+ 	@include htags();
+
+ 	#about {
+
+		img {
+	 	padding-right: $default_h_padding;
+	 	}
+
+	 	p {
+	 	padding-left: $default_h_padding;
+	 	}
+	}
+
+ 	.services-section {
+		h4 {
+			width: 100%;
+			margin: auto;
+			padding: $default_v_padding $default_h_padding $default_v_padding/2 $default_h_padding;
+		}
+	}
+
+	.contact-info:first-child {
+		padding: 0;
+	}
+
+
+
+	.form-group {
+		width: 40vw;
+		max-width: 500*$px;
+	}	
+
+
+}
+
+@media (min-width:1200*$px) {
+
+ 	@include htags(1.1);
+
+ 	//redeclare variables to be bigger
+ 	$default_h_padding: $phi * $phi * 1rem;
+	$default_v_padding: $default_h_padding;
+
+	//reclaculate padding
+	.page-section {
+    	padding: 2*$default_v_padding 0 $default_v_padding 0;
+
+		h1 {
+			padding: $default_v_padding 2*$default_h_padding 2*$default_v_padding 2*$default_h_padding;
+		}
+
+		img, p {
+		padding: $default_v_padding 2*$default_h_padding $default_v_padding/2 2*$default_h_padding;
+		}
+
+		h4 {
+		padding: $default_v_padding $default_h_padding $default_v_padding/2 $default_h_padding;
+		}
+	}
+
+	#intro h1 {
+		padding: 4*$default_v_padding $default_h_padding $default_v_padding $default_h_padding;
+	}
+
+	#about {
+
+		img {
+	 	padding-right: $default_h_padding;
+	 	padding-bottom: 2*$default_v_padding;
+	 	}
+
+	 	p {
+	 	padding-left: $default_h_padding;
+	 	padding-bottom: 2*$default_v_padding;
+	 	}
+	}
+
+	.services-section {
+	padding-bottom: 2*$default_v_padding;
+	}
+
+
+	.contact-info-wrapper {
+ 		padding: 0 0 2*$default_v_padding 0;
+	}
+
+	.contact-info {
+		padding: $default_v_padding 0 0 0;
+	}
+
+	.contact-info p {
+		padding: $default_v_padding/2 0 0 0;
+	}
+
+	.contact-info:first-child {
+		padding: 0;
+	}
+
+	.site-footer {
+		min-height: 150*$px;
+		p {
+			padding:  $default_v_padding 0 0 $default_h_padding;
+		}
+	}
+
+	.error-404 {
+     padding: 2*$default_v_padding 0 $default_v_padding 0;
+
+    	h1 {
+		padding: 2*$default_v_padding 0 $default_v_padding 0;
+		}
+	}
+
+
+}
+
+
+
+
+
+
+
